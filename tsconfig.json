@@ -16,6 +16,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "@workspace/pwa-manager": [
+        "projects/pwa-manager/src/public-api.ts"
+      ]
+    },
     "target": "es2020",
     "module": "es2020",
     "lib": [

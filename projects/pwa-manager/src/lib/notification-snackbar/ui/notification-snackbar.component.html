@@ -1,0 +1,13 @@
+<div class="mat-simple-snackbar">
+  <span class="mat-simple-snack-bar-content">
+    {{ message }}
+  </span>
+  <div class="mat-simple-snackbar-action">
+    <button mat-button color="primary" class="mat-simple-snackbar-action-icon-button" (click)="reload()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-button color="warn" class="mat-simple-snackbar-action-icon-button" (click)="cancel()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+</div>
