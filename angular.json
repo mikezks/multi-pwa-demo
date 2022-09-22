@@ -23,6 +23,7 @@
             "polyfills": "projects/app-one/src/polyfills.ts",
             "tsConfig": "projects/app-one/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "baseHref": "/app-one/",
             "assets": [
               "projects/app-one/src/favicon.ico",
               "projects/app-one/src/assets",
@@ -132,6 +133,7 @@
             "polyfills": "projects/app-two/src/polyfills.ts",
             "tsConfig": "projects/app-two/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "baseHref": "/app-two/",
             "assets": [
               "projects/app-two/src/favicon.ico",
               "projects/app-two/src/assets",
