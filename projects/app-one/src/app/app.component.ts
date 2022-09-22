@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotificationService } from '@workspace/pwa-manager';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app-one';
+
+  constructor(private notificationService: NotificationService) {
+    this.notificationService.appName = 'App ONE'
+  }
+
+  checkUpdate(): void {
+    this.notificationService.checkUpdate();
+  }
 }
