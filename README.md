@@ -1,27 +1,48 @@
-# MultiPwaDemo
+# Multi PWA Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This project shows a PWA Service Worker setup for two different SPAs deployed to different subfolders. Each app can notify the user on new versions independently. A snackbar asks the user to reload.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Run `npm start` to build both applications and run the lite-server with the Service worker enabled.
+- Run `npm run build:one` and after the build finished, press the `Check Updates` button to make sure, if the update was recognized.
+- Navigate to `App TWO`, run `npm run build:two` and press the `Check Updates` button in the second app.
+- Stay in `App TWO`, run `npm run build:one` and press the `Check Updates` button in the second app again - no notification should be shown.
 
-## Code scaffolding
+## PWA Manager Lib
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This library offers the following generic implementations:
+ - A Snackbar to notify the user on updates (`notification-snackbar`).
+ - An Angular Material navigation menu (`nav`).
+ - A service to configure the sidebar navigation links (`nav-link`).
 
-## Build
+## Setup in Web Manifest
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The generated PWA Web Manifest file needs to be configured to point to the subfolder of your app:
 
-## Running unit tests
+```json
+  {
+    "scope": "/",
+    "start_url": "/app-one/",
+  }
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup in the angular.json
 
-## Running end-to-end tests
+The `baseHref` need to point to the app's subfolder as well:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```json
+  {
+    "projects": {
+      "app-one": {
+        "architect": {
+          "build": {
+            "options": {
+              "baseHref": "/app-one/"
+            }
+          }
+        }
+      }
+    }
+  }
+```
