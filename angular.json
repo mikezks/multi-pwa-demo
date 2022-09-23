@@ -140,6 +140,7 @@
               "projects/app-two/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/app-two/src/styles.scss"
             ],
             "scripts": [],
@@ -211,6 +212,7 @@
               "projects/app-two/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/app-two/src/styles.scss"
             ],
             "scripts": []
