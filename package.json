@@ -3,10 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run build:all && npm run dev:server",
+    "serve:one": "ng serve app-one",
+    "serve:two": "ng serve app-two",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:one": "ng build app-one",
+    "build:two": "ng build app-two",
+    "build:all": "npm run build:one && npm run build:two",
+    "dev:server": "lite-server"
   },
   "private": true,
   "dependencies": {
